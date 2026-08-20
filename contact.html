@@ -37,13 +37,11 @@
                     <li><a href="contact.html" class="nav-link active">Appointment</a></li>
                 </ul>
 
-                <!-- Optional Header CTA -->
                 <div class="header-cta">
                     <a href="contact.html" class="btn btn-primary">[Your CTA Text]</a>
                 </div>
             </nav>
 
-            <!-- Mobile Navigation Toggle -->
             <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation menu" aria-controls="navigation">
                 <span></span>
                 <span></span>
@@ -78,12 +76,12 @@
                 </div>
 
                 <div class="reveal" style="max-width: 820px; margin: 0 auto;">
-                    <form class="appointment-form" id="appointment-form" action="#" method="POST" novalidate>
+                    <form class="appointment-form" id="appointment-form" novalidate>
                         <!-- Personal Information -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
                             <div class="form-group">
                                 <label for="full-name">Full Name <span aria-hidden="true" style="color: var(--color-primary);">*</span></label>
-                                <input type="text" id="full-name" name="full-name" placeholder="[Your Full Name]" required aria-required="true" />
+                                <input type="text" id="full-name" name="fullName" placeholder="[Your Full Name]" required aria-required="true" />
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone Number <span aria-hidden="true" style="color: var(--color-primary);">*</span></label>
@@ -108,13 +106,11 @@
                         <!-- Service Selection -->
                         <div class="form-group">
                             <label for="service-type">Select Service <span aria-hidden="true" style="color: var(--color-primary);">*</span></label>
-                            <select id="service-type" name="service-type" required aria-required="true">
+                            <select id="service-type" name="service" required aria-required="true">
                                 <option value="">— Please select a service —</option>
-                                <option value="service-1">[Your Service Name] — [Brief Description]</option>
-                                <option value="service-2">[Your Service Name] — [Brief Description]</option>
-                                <option value="service-3">[Your Service Name] — [Brief Description]</option>
-                                <option value="service-4">[Your Service Name] — [Brief Description]</option>
-                                <option value="service-5">[Your Service Name] — [Brief Description]</option>
+                                <option value="[Your Service Name] — [Brief Description]">[Your Service Name] — [Brief Description]</option>
+                                <option value="[Your Service Name] — [Brief Description]">[Your Service Name] — [Brief Description]</option>
+                                <option value="[Your Service Name] — [Brief Description]">[Your Service Name] — [Brief Description]</option>
                             </select>
                         </div>
 
@@ -122,14 +118,14 @@
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
                             <div class="form-group">
                                 <label for="appointment-date">Preferred Date <span aria-hidden="true" style="color: var(--color-primary);">*</span></label>
-                                <input type="date" id="appointment-date" name="appointment-date" required aria-required="true" min="2026-08-21" />
+                                <input type="date" id="appointment-date" name="date" required aria-required="true" min="2026-08-21" />
                                 <p style="font-size: var(--font-size-sm); color: var(--color-dark-grey); margin-top: var(--spacing-xs);">
                                     Please select a date at least 24 hours in advance.
                                 </p>
                             </div>
                             <div class="form-group">
                                 <label for="appointment-time">Preferred Time <span aria-hidden="true" style="color: var(--color-primary);">*</span></label>
-                                <select id="appointment-time" name="appointment-time" required aria-required="true">
+                                <select id="appointment-time" name="time" required aria-required="true">
                                     <option value="">— Select a time slot —</option>
                                     <option value="09:00">09:00 — 10:00</option>
                                     <option value="10:00">10:00 — 11:00</option>
@@ -152,12 +148,13 @@
 
                         <!-- Submit -->
                         <div style="text-align: center; margin-top: var(--spacing-lg);">
-                            <button type="submit" class="btn btn-primary" style="min-width: 200px;">
+                            <button type="submit" class="btn btn-primary" id="submit-btn" style="min-width: 200px;">
                                 Schedule Appointment
                             </button>
                             <p style="font-size: var(--font-size-sm); color: var(--color-dark-grey); margin-top: var(--spacing-sm);">
                                 <span aria-hidden="true" style="color: var(--color-primary);">*</span> Required fields
                             </p>
+                            <div id="form-status" style="margin-top: var(--spacing-md); font-weight: var(--font-weight-medium);"></div>
                         </div>
                     </form>
                 </div>
@@ -168,6 +165,7 @@
         <section class="section" aria-labelledby="info-title">
             <div class="container">
                 <div class="grid grid-3 reveal-stagger">
+                    <!-- Cards with SVG icons (same as before) -->
                     <div class="card" style="text-align: center;">
                         <div style="width: 48px; height: 48px; margin: 0 auto var(--spacing-md); background: var(--color-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-primary);">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -230,7 +228,6 @@
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
-                <!-- Brand / About -->
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
                         <span class="logo-mark" aria-hidden="true"></span>
@@ -238,8 +235,6 @@
                     </a>
                     <p>[Your Company Description — a brief tagline or value proposition.]</p>
                 </div>
-
-                <!-- Quick Links -->
                 <div>
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
@@ -249,8 +244,6 @@
                         <li><a href="contact.html">Appointment</a></li>
                     </ul>
                 </div>
-
-                <!-- Services -->
                 <div>
                     <h4 class="footer-heading">Our Services</h4>
                     <ul class="footer-links">
@@ -259,8 +252,6 @@
                         <li><a href="services.html">[Your Service Name]</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact -->
                 <div>
                     <h4 class="footer-heading">Get in Touch</h4>
                     <ul class="footer-links">
@@ -270,14 +261,83 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <span>&copy; [Year] [Your Enterprise Name]. All rights reserved.</span>
                 <span>Built with care.</span>
             </div>
         </div>
     </footer>
+
+    <!-- ----- FORM SUBMISSION SCRIPT ----- -->
+    <script>
+        (function() {
+            'use strict';
+
+            const form = document.getElementById('appointment-form');
+            const statusDiv = document.getElementById('form-status');
+            const submitBtn = document.getElementById('submit-btn');
+
+            // ----- REPLACE THIS URL WITH YOUR ACTUAL CLOUD FUNCTION URL -----
+            const CLOUD_FUNCTION_URL = 'https://your-region-your-project.cloudfunctions.net/submitAppointment';
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                // Disable button and show loading
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+                statusDiv.innerHTML = '';
+                statusDiv.style.color = 'var(--color-dark-text)';
+
+                // Gather form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                // Basic validation (HTML5 handles required, but we check)
+                const requiredFields = ['fullName', 'phone', 'email', 'address', 'service', 'date', 'time'];
+                let missing = false;
+                for (let field of requiredFields) {
+                    if (!data[field] || data[field].trim() === '') {
+                        missing = true;
+                        statusDiv.innerHTML = `Please fill in all required fields.`;
+                        statusDiv.style.color = 'var(--color-primary)';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Schedule Appointment';
+                        return;
+                    }
+                }
+
+                try {
+                    const response = await fetch(CLOUD_FUNCTION_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        statusDiv.innerHTML = '✅ Appointment booked successfully! We will contact you shortly.';
+                        statusDiv.style.color = 'var(--color-primary)';
+                        form.reset();
+                    } else {
+                        statusDiv.innerHTML = '❌ ' + (result.error || 'Something went wrong. Please try again.');
+                        statusDiv.style.color = 'var(--color-primary)';
+                    }
+                } catch (error) {
+                    statusDiv.innerHTML = '❌ Network error. Please check your connection and try again.';
+                    statusDiv.style.color = 'var(--color-primary)';
+                    console.error('Submission error:', error);
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Schedule Appointment';
+                }
+            });
+
+        })();
+    </script>
 
 </body>
 </html>
