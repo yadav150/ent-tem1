@@ -1,0 +1,44 @@
+{
+  "rules": {
+    "appointments": {
+      ".read": false,
+      ".write": false,
+      "$appointmentId": {
+        ".validate": "newData.hasChildren(['fullName', 'phone', 'email', 'address', 'service', 'date', 'time'])",
+        "fullName": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "phone": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "email": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "address": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "service": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "date": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "time": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "notes": {
+          ".validate": "newData.isString()"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber()"
+        },
+        "status": {
+          ".validate": "newData.isString()"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}
