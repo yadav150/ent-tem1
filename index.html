@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[Your Enterprise Name] | Home</title>
+    <meta name="description" content="[Your Enterprise Name] — [Your Company Description. Replace this with a compelling meta description for search engines.]" />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Global JavaScript (deferred) -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Skip-to-Content Link (Accessibility) -->
+    <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header class="header" role="banner">
+        <div class="container">
+            <!-- Enterprise Identity / Logo -->
+            <a href="index.html" class="logo" aria-label="[Your Enterprise Name] home">
+                <span class="logo-mark" aria-hidden="true"></span>
+                <span>[Your Enterprise Name]</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+
+                <!-- Optional Header CTA -->
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-primary">[Your CTA Text]</a>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation menu" aria-controls="navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <main id="main-content">
+
+        <!-- ----- HERO SECTION ----- -->
+        <section class="section" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="reveal">
+                    <h1 id="hero-title">Welcome to [Your Enterprise Name]</h1>
+                    <p class="section-subtitle" style="text-align: justify;">
+                        [Your Company Description. Explain what your enterprise does, your mission, and the value you bring to clients. Keep this concise and compelling.]
+                    </p>
+                    <div style="margin-top: var(--spacing-lg);">
+                        <a href="services.html" class="btn btn-primary">[Your Primary CTA]</a>
+                        <a href="about.html" style="margin-left: var(--spacing-sm);">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----- SERVICES OVERVIEW SECTION ----- -->
+        <section class="section" style="background: var(--color-light-grey);" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 id="services-title" class="section-title">Our Services</h2>
+                    <p class="section-subtitle">[Brief description of your service offerings.]</p>
+                </div>
+
+                <div class="grid grid-3 reveal-stagger">
+                    <!-- Service Card 1 -->
+                    <div class="card">
+                        <h3 class="card-title">[Your Service Name]</h3>
+                        <p class="card-text">[Your Service Description. Explain what this service includes and how it benefits your clients.]</p>
+                        <a href="services.html" aria-label="Learn more about [Your Service Name]">Learn more →</a>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="card">
+                        <h3 class="card-title">[Your Service Name]</h3>
+                        <p class="card-text">[Your Service Description. Explain what this service includes and how it benefits your clients.]</p>
+                        <a href="services.html" aria-label="Learn more about [Your Service Name]">Learn more →</a>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="card">
+                        <h3 class="card-title">[Your Service Name]</h3>
+                        <p class="card-text">[Your Service Description. Explain what this service includes and how it benefits your clients.]</p>
+                        <a href="services.html" aria-label="Learn more about [Your Service Name]">Learn more →</a>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--spacing-lg);">
+                    <a href="services.html" class="btn btn-primary">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----- ABOUT TEASER SECTION ----- -->
+        <section class="section" aria-labelledby="about-teaser-title">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center;">
+                    <div class="reveal">
+                        <h2 id="about-teaser-title">About [Your Enterprise Name]</h2>
+                        <p>[Your Company Description. Share your story, your values, and what makes your enterprise unique.]</p>
+                        <p>[Additional information about your experience, approach, or commitment to quality.]</p>
+                        <a href="about.html" class="btn btn-primary" style="margin-top: var(--spacing-sm);">Read More</a>
+                    </div>
+                    <div class="reveal" style="background: var(--color-light-grey); border: var(--border-width) solid var(--border-color); border-radius: var(--border-radius); min-height: 200px; display: flex; align-items: center; justify-content: center; color: var(--color-dark-grey);">
+                        [Your Image]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----- FINAL CTA SECTION ----- -->
+        <section class="section" style="background: var(--color-primary); color: var(--color-white);" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h2 id="cta-title" style="color: var(--color-white);">Ready to Get Started?</h2>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-lg);">
+                        [Your CTA description. Encourage visitors to contact you or take the next step.]
+                    </p>
+                    <a href="contact.html" class="btn" style="background: var(--color-white); color: var(--color-primary); border-color: var(--color-white);">
+                        [Your CTA Button Text]
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand / About -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-mark" aria-hidden="true"></span>
+                        <span>[Your Enterprise Name]</span>
+                    </a>
+                    <p>[Your Company Description — a brief tagline or value proposition.]</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="footer-heading">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">[Your Service Name]</a></li>
+                        <li><a href="services.html">[Your Service Name]</a></li>
+                        <li><a href="services.html">[Your Service Name]</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-links">
+                        <li>[Your Address]</li>
+                        <li>[Your Phone Number]</li>
+                        <li><a href="mailto:[Your Email Address]">[Your Email Address]</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <span>&copy; [Year] [Your Enterprise Name]. All rights reserved.</span>
+                <span>Built with care.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
