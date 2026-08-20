@@ -11,23 +11,20 @@ const authToken = functions.config().twilio.auth_token;
 const client = twilio(accountSid, authToken);
 
 // Twilio WhatsApp number (sender)
-const FROM_WHATSAPP = functions.config().twilio.whatsapp_from || 'whatsapp:+14155238886'; // Sandbox default
+const FROM_WHATSAPP = functions.config().twilio.whatsapp_from || 'whatsapp:+14155238886';
 
 // Admin's WhatsApp number (recipient)
 const ADMIN_WHATSAPP = functions.config().twilio.admin_whatsapp_to;
 
-// Firestore collection name
-const COLLECTION = 'appointments';
+// Realtime Database path for appointments
+const DB_PATH = 'appointments';
 
 /**
  * HTTP Cloud Function.
  * Endpoint: https://your-region-your-project.cloudfunctions.net/submitAppointment
- *
- * Expects POST with JSON body containing:
- *   fullName, phone, email, address, service, date, time, notes (optional)
  */
 exports.submitAppointment = functions.https.onRequest(async (req, res) => {
-    // Enable CORS for your frontend domain (adjust as needed)
+    // Enable CORS for your frontend domain
     res.set('Access-Control-Allow-Origin', '*');
     res.set('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.set('Access-Control-Allow-Headers', 'Content-Type');
@@ -37,7 +34,6 @@ exports.submitAppointment = functions.https.onRequest(async (req, res) => {
         return;
     }
 
-    // Only POST allowed
     if (req.method !== 'POST') {
         res.status(405).json({ error: 'Method Not Allowed. Use POST.' });
         return;
@@ -55,7 +51,7 @@ exports.submitAppointment = functions.https.onRequest(async (req, res) => {
             }
         }
 
-        // Sanitize and trim
+        // Prepare appointment data
         const appointment = {
             fullName: data.fullName.trim(),
             phone: data.phone.trim(),
@@ -65,13 +61,15 @@ exports.submitAppointment = functions.https.onRequest(async (req, res) => {
             date: data.date.trim(),
             time: data.time.trim(),
             notes: (data.notes || '').trim(),
-            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            createdAt: admin.database.ServerValue.TIMESTAMP,
             status: 'pending'
         };
 
-        // 1. Save to Firestore
-        const docRef = await admin.firestore().collection(COLLECTION).add(appointment);
-        const docId = docRef.id;
+        // 1. Save to Realtime Database
+        const dbRef = admin.database().ref(DB_PATH);
+        const newRef = dbRef.push();
+        await newRef.set(appointment);
+        const docId = newRef.key;
 
         // 2. Send WhatsApp notification to admin
         const messageBody = `
@@ -88,7 +86,6 @@ exports.submitAppointment = functions.https.onRequest(async (req, res) => {
 🆔 *Ref:* ${docId}
         `.trim();
 
-        // Ensure admin WhatsApp number is configured
         if (ADMIN_WHATSAPP) {
             await client.messages.create({
                 body: messageBody,
