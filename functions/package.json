@@ -1,6 +1,6 @@
 {
   "name": "functions",
-  "description": "Cloud Functions for appointment form submission and WhatsApp notifications.",
+  "description": "Cloud Functions for appointment form submission with Firebase Realtime Database and Twilio WhatsApp notifications.",
   "scripts": {
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
